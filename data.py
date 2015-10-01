@@ -1,6 +1,7 @@
 __author__ = 'chris'
 
 import pandas as pd
+from collections import Counter
 
 class Data:
     PATH_TRAINING ="./train.json"
@@ -16,11 +17,22 @@ class Data:
     def nb_recipe(self):
         return (len(self.data.index))
 
+    def get_ingredients(self):
+        return self.data.ingredients
+
+    def get_cuisine(self):
+        return self.data.cuisine
+
+    def get_index(self):
+        return self.data.index
+
+"""test = Data()
+ingredient_list = list()
 
 
+for i in test.data.ingredients:
+    ingredient_list = ingredient_list + i
 
-test = Data()
-print(test.data.columns)
-print(test.data.loc[0])
-print("Nouveau test")
-print(test.data.as_matrix(['cuisine']))
+print(Counter(ingredient_list).most_common())"""
+
+
